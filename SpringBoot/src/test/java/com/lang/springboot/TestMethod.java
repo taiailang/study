@@ -61,6 +61,7 @@ public class TestMethod {
     @Test
     public void test() {
 
+        String aa="测试、测试";
         Long a=10L;
         Integer b=a.intValue();
         System.out.println(b);
