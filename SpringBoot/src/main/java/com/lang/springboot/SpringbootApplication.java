@@ -2,7 +2,6 @@ package com.lang.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -13,8 +12,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 
 @EnableAsync //异步调用
-@EnableScheduling
-@SpringBootApplication
+@EnableScheduling //开启定时任务
+@SpringBootApplication  // 启动类
 @EnableTransactionManagement  //开通事务EnableTransactionManagement
 public class SpringbootApplication {
 

@@ -3,8 +3,10 @@ package com.lang.springboot;
 import com.lang.springboot.bean.AsyncTasks;
 import com.lang.springboot.bean.SomeBean;
 import com.lang.springboot.config.Config;
-import com.lang.springboot.controller.LoginController;
+import com.lang.springboot.handler.HelloJobHandler;
+import com.lang.springboot.scheduled.ScheduledTask;
 import com.lang.springboot.service.TestService;
+import com.xxl.job.core.biz.model.ReturnT;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +16,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.text.DecimalFormat;
 import java.util.concurrent.CompletableFuture;
 
 
@@ -35,7 +36,10 @@ public class TestMethod {
     private TestService testService;
 
     @Autowired
-    private Config config;
+    private ScheduledTask scheduledTask;
+
+    @Autowired
+    private HelloJobHandler helloJobHandler;
 
     /**
      * 测试异步调用
@@ -54,7 +58,6 @@ public class TestMethod {
         System.out.println(task3);
 
         long end = System.currentTimeMillis();
-
         log.info("任务全部完成，总耗时：" + (end - start) + "毫秒");
     }
 
@@ -76,6 +79,9 @@ public class TestMethod {
         System.out.println(str);
     }
 
+    /**
+     * 测试获取bean
+     */
     @Test
     public void testConfig() {
 //        SomeBean someBean = config.someBean();
@@ -85,6 +91,9 @@ public class TestMethod {
         sb.doWork();
     }
 
+    /**
+     * 测试获取bean的三种状态
+     */
     @Test
     public void testConfig1() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
@@ -94,13 +103,20 @@ public class TestMethod {
         System.out.println(sb2);
         context.close();
     }
-//<?xml version="1.0" encoding="UTF-8"?>
-//<!DOCTYPE Server SYSTEM "opt/pdos/etc/pdoslrd.dtd">
+
+    /**
+     * 测试Scheduled定时任务
+     */
     @Test
-    public void TestLogin() {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        LoginController controller = context.getBean("loginController", LoginController.class);
-        controller.login();
+    public void testScheduledTask() {
+        scheduledTask.testScheduledTask();
+        ReturnT<String> execute = null;
+        try {
+            execute = helloJobHandler.execute("1000");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(execute);
     }
 
 }
