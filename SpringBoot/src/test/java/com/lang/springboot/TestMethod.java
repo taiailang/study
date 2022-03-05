@@ -119,4 +119,9 @@ public class TestMethod {
         System.out.println(execute);
     }
 
+    @Test
+    public void commit(){
+        System.out.println("提交成功！！");
+    }
+
 }
