@@ -122,6 +122,7 @@ public class TestMethod {
     @Test
     public void commit(){
         System.out.println("提交成功！！");
+        System.out.println("二次提交成功！！！");
     }
 
 }
