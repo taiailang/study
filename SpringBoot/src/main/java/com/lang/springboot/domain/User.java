@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2022/2/28
  */
 
-//@Data
+@Data
 @Configuration
 @Component
 @PropertySource(value = {"classpath:application.properties"},encoding="utf-8")

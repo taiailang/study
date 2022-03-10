@@ -25,7 +25,7 @@ import java.util.concurrent.CompletableFuture;
  */
 
 @Slf4j
-@SpringBootTest(classes = SpringbootApplication.class)
+@SpringBootTest(classes = SpringbootStartApplication.class)
 @RunWith(SpringRunner.class)
 public class TestMethod {
 
