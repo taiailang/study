@@ -1,11 +1,13 @@
 package com.lang.springboot;
 
+import com.arcsoft.face.toolkit.ImageInfo;
 import com.lang.springboot.bean.AsyncTasks;
 import com.lang.springboot.bean.SomeBean;
 import com.lang.springboot.config.Config;
 import com.lang.springboot.handler.HelloJobHandler;
 import com.lang.springboot.scheduled.ScheduledTask;
 import com.lang.springboot.service.TestService;
+import com.lang.springboot.util.Utils;
 import com.xxl.job.core.biz.model.ReturnT;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -16,7 +18,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.File;
 import java.util.concurrent.CompletableFuture;
+
+import static com.arcsoft.face.toolkit.ImageFactory.getRGBData;
 
 
 /**
@@ -64,12 +69,11 @@ public class TestMethod {
     @Test
     public void test() {
 
-        String aa="测试、测试++++++++++++++++++";
-        String bb="测试、测试++++++++++++++++++";
-        String CC="测试、测试++++++++++++++++++";
-        Long a=10L;
-        Integer b=a.intValue();
-        System.out.println(b);
+        Boolean a = false;
+        Integer b = 10;
+        Integer c = 100;
+        System.out.println(a ? b : c);
+
     }
 
     /**
@@ -121,10 +125,15 @@ public class TestMethod {
         System.out.println(execute);
     }
 
+    /**
+     * 将url转化为file文件
+     */
     @Test
-    public void commit(){
-        System.out.println("提交成功！！");
-        System.out.println("二次提交成功！！！");
+    public void TestUrlToFile() {
+        File fileByUrl = Utils.getFileByUrl("https://lang-feng.oss-cn-hangzhou.aliyuncs.com/%E6%AD%A6.jpg");
+        System.out.println(fileByUrl);
+        ImageInfo imageInfo = getRGBData(fileByUrl);
+        System.out.println(imageInfo);
     }
 
 }

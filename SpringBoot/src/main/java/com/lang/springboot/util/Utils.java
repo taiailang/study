@@ -50,7 +50,14 @@ public class Utils {
         return file;
     }
 
-    public boolean generateImage(String imgStr, String imgFilePath) {
+    /**
+     * 将base64编码转化为图片
+     *
+     * @param imgStr
+     * @param imgFilePath
+     * @return
+     */
+    public static boolean generateImage(String imgStr, String imgFilePath) {
         if (imgStr == null) {
             return false;
         }
@@ -72,4 +79,28 @@ public class Utils {
             return false;
         }
     }
+
+    public boolean generateImages(String imgStr,String imgFilePath) {
+        if(imgStr == null) {
+            return false;
+        }
+        byte[] b;
+        try {
+            b = new BASE64Decoder().decodeBuffer(imgStr);
+            for (int i = 0; i < b.length; i++) {
+                if(b[i]<0) {
+                    b[i]+=256;
+                }
+            }
+            OutputStream out = new FileOutputStream(imgFilePath);
+            out.write(b);
+            out.flush();
+            out.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

@@ -5,7 +5,6 @@ import com.arcsoft.face.toolkit.ImageInfo;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,8 +62,13 @@ public class ArcSoft {
         return faceEngine;
     }
 
-
-
+    /**
+     * 人脸特征提取 跟数据库作对比
+     * @param path1
+     * @param path2
+     * @param faceEngine
+     * @return
+     */
     public float faceRecognition(String path1, String path2,FaceEngine faceEngine){
         int errorCode;
         //人脸检测1
@@ -100,5 +104,20 @@ public class ArcSoft {
             System.out.println("相似度：" + faceSimilar.getScore());
             return faceSimilar.getScore();
         }
+    }
+
+    public Integer toFace(FaceEngine faceEngine){
+
+        //从官网获取
+        String appId = "";
+        String sdkKey = "";
+
+        //人脸检测
+        int errorCode = faceEngine.activeOnline(appId, sdkKey);
+        ImageInfo imageInfo = getRGBData(new File("d:\\aaa.jpg"));
+        List<FaceInfo> faceInfoList = new ArrayList<FaceInfo>();
+        errorCode = faceEngine.detectFaces(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList);
+        System.out.println(faceInfoList);
+        return null;
     }
 }

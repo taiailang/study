@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class Msg {
+public class Message {
     private int code;
     private double acc;
     private String msg;
