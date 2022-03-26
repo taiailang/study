@@ -19,7 +19,7 @@ public class ArcSoft {
         //        从官网获取
         String appId = "CFPh9qXnbCN428TJMUpXyQjk8sZGKy8btULibSmMiy9c";
         String sdkKey = "49JuVdkCYF1ugKDnwe9cTeW6g7k2FpTkPYFX9GPJ4iR9";
-        FaceEngine faceEngine = new FaceEngine("D:\\下载\\Google\\ArcSoft_ArcFace_Java_Windows_x64_V3.0 (1)\\libs\\WIN64");
+        FaceEngine faceEngine = new FaceEngine("C:\\WIN64");
         int errorCode = faceEngine.active(appId, sdkKey);
 
 

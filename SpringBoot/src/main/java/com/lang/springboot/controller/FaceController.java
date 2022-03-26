@@ -17,7 +17,7 @@ public class FaceController {
     private FaceService faceService;
 
     @ResponseBody
-    @RequestMapping("/img")
+    @RequestMapping("/imgs")
     public Message faceCheck(@RequestBody Message message) {
 
         Message res = faceService.faceCheck(message);

@@ -69,10 +69,9 @@ public class TestMethod {
     @Test
     public void test() {
 
-        Boolean a = false;
-        Integer b = 10;
-        Integer c = 100;
-        System.out.println(a ? b : c);
+        Utils utils=new Utils();
+        File file = Utils.getFileByUrl("https://lang-feng.oss-cn-hangzhou.aliyuncs.com/face/%E4%BA%BA%E8%84%B81647091184994.jpg");
+        System.out.println(file);
 
     }
 

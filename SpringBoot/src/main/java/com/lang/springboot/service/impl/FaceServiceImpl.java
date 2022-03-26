@@ -7,6 +7,7 @@ import com.lang.springboot.service.ArcSoft;
 import com.lang.springboot.service.FaceService;
 import com.lang.springboot.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.ByteArrayOutputStream;
@@ -22,12 +23,12 @@ import java.util.UUID;
  * @author 浪浪
  * @date 2022/3/11
  */
+@Service
 public class FaceServiceImpl implements FaceService {
 
     @Autowired
     private ArcSoft arcSoft;
 
-    @Autowired
     private FaceEngine faceEngine = ArcSoft.faceEngine();
 
     @Override

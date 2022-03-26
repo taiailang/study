@@ -174,9 +174,9 @@
             <groupId>com.arcsoft.face</groupId>
             <artifactId>arcsoft-sdk-face</artifactId>
             <version>3.0.0.0</version>
-            <scope>system</scope>
+<!--            <scope>system</scope>-->
 <!--            如果没有安装到本地仓库，可以将jar包拷贝到工程的lib下面下，直接引用-->
-            <systemPath>${project.basedir}/lib/arcsoft-sdk-face-3.0.0.0.jar</systemPath>
+<!--            <systemPath>${project.basedir}/lib/arcsoft-sdk-face-3.0.0.0.jar</systemPath>-->
         </dependency>
 
         <dependency>
@@ -197,8 +197,6 @@
             <artifactId>commons-collections</artifactId>
             <version>3.2.1</version>
         </dependency>
-
-
     </dependencies>
 
 
