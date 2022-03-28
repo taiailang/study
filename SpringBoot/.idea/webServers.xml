@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="590588c9-032c-4fe4-81ac-319a770a772b" name="阿里云" url="http://47.98.212.134">
+        <fileTransfer host="47.98.212.134" port="22" privateKey="$USER_HOME$/Downloads/login.pem" rootFolder="C:\jar" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
