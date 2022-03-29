@@ -94,14 +94,14 @@ public class NumberUtils {
     }
 
     /**
-     * 计算平均数，返回Double，保留两位小数
+     * 计算平均数，返回Double，保留四位小数
      */
     public static Double avgRateDouble(Double molecule, Double denominator) {
         if (denominator == 0) {
             return (double) 0;
         }
 
-        BigDecimal avgRate = new BigDecimal(molecule).divide(new BigDecimal(denominator), 2, BigDecimal.ROUND_HALF_DOWN);
+        BigDecimal avgRate = new BigDecimal(molecule).divide(new BigDecimal(denominator), 4, BigDecimal.ROUND_HALF_DOWN);
         if (avgRate == null) {
             avgRate = new BigDecimal(0);
         }

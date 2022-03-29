@@ -1,6 +1,5 @@
 package com.lang.springboot.controller;
 
-import com.arcsoft.face.FaceEngine;
 import com.lang.springboot.domain.FaceInfo;
 import com.lang.springboot.domain.Message;
 import com.lang.springboot.service.FaceService;

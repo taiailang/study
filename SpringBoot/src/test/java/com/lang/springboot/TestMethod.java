@@ -1,6 +1,5 @@
 package com.lang.springboot;
 
-import com.arcsoft.face.toolkit.ImageInfo;
 import com.lang.springboot.bean.AsyncTasks;
 import com.lang.springboot.bean.SomeBean;
 import com.lang.springboot.config.Config;
@@ -20,8 +19,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
 import java.util.concurrent.CompletableFuture;
-
-import static com.arcsoft.face.toolkit.ImageFactory.getRGBData;
 
 
 /**
@@ -124,15 +121,15 @@ public class TestMethod {
         System.out.println(execute);
     }
 
-    /**
-     * 将url转化为file文件
-     */
-    @Test
-    public void TestUrlToFile() {
-        File fileByUrl = Utils.getFileByUrl("https://lang-feng.oss-cn-hangzhou.aliyuncs.com/%E6%AD%A6.jpg");
-        System.out.println(fileByUrl);
-        ImageInfo imageInfo = getRGBData(fileByUrl);
-        System.out.println(imageInfo);
-    }
+//    /**
+//     * 将url转化为file文件
+//     */
+//    @Test
+//    public void TestUrlToFile() {
+//        File fileByUrl = Utils.getFileByUrl("https://lang-feng.oss-cn-hangzhou.aliyuncs.com/%E6%AD%A6.jpg");
+//        System.out.println(fileByUrl);
+//        ImageInfo imageInfo = getRGBData(fileByUrl);
+//        System.out.println(imageInfo);
+//    }
 
 }

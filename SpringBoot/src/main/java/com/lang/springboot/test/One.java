@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.lang.springboot.domain.FaceInfo;
 import com.lang.springboot.domain.Message;
 import com.lang.springboot.util.NumberUtils;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -14,6 +15,7 @@ import java.util.List;
  * @author 浪浪
  * @date 2022/3/24
  */
+
 public class One {
     public static void main(String[] args) {
 

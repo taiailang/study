@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SpringBoot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/SpringBoot_jar/SpringBoot.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/SpringBoot_jar/SpringBoot.jar!/" />
+    </SOURCES>
+  </library>
+</component>
